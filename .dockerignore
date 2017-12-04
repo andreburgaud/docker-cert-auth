@@ -1,0 +1,4 @@
+# Files not needed for building the Docker image
+LICENSE
+README.md
+Makefile

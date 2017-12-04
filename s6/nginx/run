@@ -1,0 +1,6 @@
+#!/bin/sh
+
+exec 2>&1
+echo "nginx started"
+# exec nginx -c /conf/nginx.conf -g 'daemon off;'
+exec nginx -g 'daemon off;'

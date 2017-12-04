@@ -1,0 +1,5 @@
+#!/bin/sh
+
+exec 2>&1
+echo "web started"
+exec '/web/server'

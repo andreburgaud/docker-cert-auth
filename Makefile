@@ -9,7 +9,7 @@ help:
 	@echo 'Usage:'
 	@echo '    make clean           Delete executables and certs'
 	@echo '    make certs           Generate certs (using OpenSSL)'
-	@echo '    make build           Compile local version of the server'
+	@echo '    make build           Compile local version of the server (testing outsite container)'
 	@echo '    make xbuild          Cross-compile server for Linux (targetging container)'
 	@echo '    make image           Build Docker image using the local Dockerfile'
 	@echo '    make serve           Start the Docker container'

@@ -1,16 +1,20 @@
 # ==============================================================================
 # First stage build (compile the Go server)
 # ==============================================================================
-FROM golang:1.9.2-alpine3.6 as builder
+FROM alpine:3.7 as builder
+
+RUN apk add --no-cache go musl-dev
 
 WORKDIR /
+
 COPY web/main.go .
+
 RUN GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o server .
 
 # ==============================================================================
 # Second stage build
 # ==============================================================================
-FROM alpine:edge
+FROM alpine:3.7
 
 RUN apk add --no-cache nginx s6
 

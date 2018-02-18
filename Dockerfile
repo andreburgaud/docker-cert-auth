@@ -28,19 +28,11 @@ RUN chmod +x -R /s6 && \
     ln -sf /dev/stderr /var/log/nginx/error.log
 
 # Copy the internal server from the first stage build
-#ADD server /web/
 COPY --from=builder /server /web/
 
 # Copy server config
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 COPY nginx/default.conf /etc/nginx/conf.d/
-
-# Copy certs to server
-#RUN mkdir -p /etc/nginx/certs
-#COPY certs/server.crt \
-#     certs/server.key \
-#     certs/ca.crt \
-#     /etc/nginx/certs/
 
 STOPSIGNAL SIGTERM
 

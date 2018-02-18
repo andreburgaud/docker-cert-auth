@@ -10,7 +10,6 @@ help:
 	@echo '    make clean           Delete executables and certs'
 	@echo '    make certs           Generate certs (using OpenSSL)'
 	@echo '    make build           Compile local version of the server (testing outsite container)'
-	@echo '    make xbuild          Cross-compile server for Linux (targetging container)'
 	@echo '    make image           Build Docker image using the local Dockerfile'
 	@echo '    make serve           Start the Docker container'
 	@echo
@@ -20,12 +19,6 @@ all: certs image
 build:
 	@echo 'Compile server for local test'
 	go build -o server web/main.go
-
-# Not needed: the server is compiled in the first stage build (see Dockerfile)
-# xbuild:
-# 	@echo 'Cross compile server for Linux'
-# 	GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o server web/main.go
-# 	upx server
 
 image:
 	docker build -t ${IMAGE} .

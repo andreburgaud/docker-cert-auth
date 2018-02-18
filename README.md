@@ -21,7 +21,7 @@ If you don't rebuild the Docker image and simply pull the public image from Dock
 * **OpenSSl** to generate keys and certificates
 * **Curl** to test the communication with the server
 
-# Simplified Architecture 
+# Simplified Architecture
 
 TBD
 
@@ -179,7 +179,7 @@ $ cd docker-cert-auth
 $ make all
 ```
 
-By default, the genrated Docker image is `docker-cert-auth`. It can be changed in the `Makefile` by changing the variable name `IMAGE`.
+By default, the generated Docker image is `docker-cert-auth`. It can be changed in the `Makefile` by changing the variable name `IMAGE`.
 
 # License
 
